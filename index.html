@@ -1,90 +1,418 @@
-<!DOCTYPE HTML>
-<html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
 
-    <title>Shun Liu</title>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="generator" content="HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org">
+  <title>Shun Liu</title>
+  <style type="text/css">
+    /* Color scheme stolen from Sergey Karayev */
 
-    <meta name="author" content="Shun Liu">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    
-  </head>
+    a {
+      color: #1772d0;
+      text-decoration: none;
+    }
 
-  <body>
-    <table style="width:100%;max-width:900px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-      <tr style="padding:0px">
-        <td style="padding:0px">
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr style="padding:0px">
-              <td style="padding:2.5%;width:63%;vertical-align:middle">
-                <p class="name" style="text-align: center;">
-                  Shun Liu
-                </p>
-                <p>
-    <p style="text-align: center; font-weight: bold; margin-bottom: -8px;">Ph.D. Student</p>
-    <p style="text-align: center; font-weight: bold;">Email: kevinliuleo [AT] gmail [DOT] com</p>
-		I'm an incoming CS PhD student at <a href="https://www.vcu.edu/"><u>Virginia Commonwealth University</u></a>, Richmond VA, United States, advised by <a href="https://egr.vcu.edu/directory/nan.xi/"><u>Prof. Nan Xi</u></a>.
-    <br>
-    <br>
-    I obtained my B.E. in Computer Science from <a href="https://english.sufe.edu.cn/"><u>Shanghai University of Finance and Economics (SUFE)</u></a>, Shanghai, China. During my undergraduate study, 
-    I was fortunate to be advised by <a href="https://engineering.buffalo.edu/computer-science-engineering/people/faculty-directory/full-time.host.html/content/shared/engineering/computer-science-engineering/profiles/faculty/ladder/doermann-david.detail.html"><u>Prof. David Doermann</u></a>
-    and <a href="https://gong-xuan.github.io/"><u>Dr. Xuan Gong</u></a> at State University of New York at Buffalo (UB), and 
-    <a href="https://faculty-directory.dartmouth.edu/soroush-vosoughi"><u>Prof. Soroush Vosoughi</u></a> at Dartmouth College.
-                </p>
-                <p style="text-align:center">
-                  <a href="https://scholar.google.com/citations?hl=en&user=9Y1aQ0oAAAAJ">Google Scholar</a> &nbsp;/&nbsp;
-                  <a href="https://www.linkedin.com/in/shun-liu-5285492a2/">LinkedIn</a>
-                </p>
-              </td>
-              <td style="padding:2.5%;width:37%;max-width:37%">
-                <a href="images/profile.png"><img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo" src="images/profile.png" class="hoverZoomLink"></a>
-              </td>
-            </tr>
-          </tbody></table>
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-              <tr>
-              <td style="padding:16px;width:100%;vertical-align:middle">
-                <h2>Publication(s)</h2>
-                <p>
-                  My research interests lies in Visual Reasoning and 2D Generation.
-                </p>
-              </td>
-            </tr>
-          </tbody></table>
-          <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+    a:focus,
+    a:hover {
+      color: #f09228;
+      text-decoration: none;
+    }
 
-    <!-- <tr onmouseout="vbanana_stop()" onmouseover="vbanana_start()" bgcolor="#ffffd0"> -->
-                
+    body {
+      font-family: 'Lato', Verdana, Helvetica, sans-serif;
+      font-size: 14px;
+      zoom: 1
+    }
+
+    td,
+    th,
+    tr,
+    p,
+    a {
+      font-family: 'Lato', Verdana, Helvetica, sans-serif;
+      font-size: 14px
+    }
+    /* small font */
+    ps {
+      font-family: 'Lato', Verdana, Helvetica, sans-serif;
+      font-size: 14px
+    }
+
+    strong {
+      font-family: 'Lato', Verdana, Helvetica, sans-serif;
+      font-size: 14px;
+    }
+
+    heading {
+      font-family: 'Lato', Verdana, Helvetica, sans-serif;
+      font-size: 22px;
+    }
+
+    papertitle {
+      font-family: 'Lato', Verdana, Helvetica, sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    detail {
+      font-family: 'Lato', Verdana, Helvetica, sans-serif;
+      text-align: center;
+      white-space: nowrap;
+      font-size: 14px;
+    }
+
+    name {
+      font-family: 'Lato', Verdana, Helvetica, sans-serif;
+      font-size: 35px;
+    }
+
+    .small{
+        line-height: 0.6em;
+        font-size: 14px
+    }
+
+    .small-font{
+        font-size: 14px
+    }
+
+    .one {
+      width: 160px;
+      height: 160px;
+      position: relative;
+    }
+
+    .two {
+      width: 160px;
+      height: 160px;
+      position: absolute;
+      transition: opacity .2s ease-in-out;
+      -moz-transition: opacity .2s ease-in-out;
+      -webkit-transition: opacity .2s ease-in-out;
+    }
+
+    .fade {
+      transition: opacity .2s ease-in-out;
+      -moz-transition: opacity .2s ease-in-out;
+      -webkit-transition: opacity .2s ease-in-out;
+    }
+
+    span.highlight {
+      background-color: #ffffd0;
+    }
+  </style>
+  <style type="text/css">
+    #sectiontohide {
+      padding: 20px;
+      background: #f0f0f0;
+      width: 400px;
+    }
+  </style>
+  <script type="text/javascript">
+    function toggle_div_fun(id) {
+
+      var divelement = document.getElementById(id);
+
+      if (divelement.style.display == 'none')
+        divelement.style.display = 'block';
+      else
+        divelement.style.display = 'none';
+    }
+  </script>
+  <link rel="icon" type="image/png" href="images/LOGO-VCU.png">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;" >
     <tr>
-      <td style="vertical-align:middle">
-        <div>
-            <img src='images/cikm24_medfuse.png' width=100%>
-        </div>
-      </td>
-      <td style="padding:18px;width:70%;vertical-align:middle">
-        <a href="https://arxiv.org/abs/2407.12309">
-          <span class="papertitle" style="font-weight: bold;">MEDFuse: Multimodal EHR Data Fusion with Masked Lab-Test Modeling and Large Language Models</span>
-        </a>
-        <br>
-        <a href="">Thao Minh Nguyen Phan</a>,
-        <a href="">Cong-Tinh Dao</a>,
-        <a href="">Chenwei Wu</a>,
-        <a href="">Jian-Zhe Wang</a>,
-        <a href=""><strong>Shun Liu</strong></a>,
-        <a href="">Jun-En Ding</a>,
-        <a href="">David Restrepo</a>,
-        <a href="">Feng Liu</a>,
-        <a href="">Fang-Ming Hung</a>,
-        <a href="">Wen-Chih Peng</a>,
-        <br>
-        <em>The 33rd ACM International Conference on Information and Knowledge Management (<strong>CIKM</strong>)</em>, 2024
-        <br>
-        <a href="https://arxiv.org/abs/2407.12309">[arXiv]</a>
-        <p></p>
+      <td>
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+          <tr>
+            <td width="100%" valign="middle">
+              <p align="center">
+                <name>Shun Liu</name>
+              </p>
+              <p>
+                I'm an incoming CS PhD student at <a href="https://www.vcu.edu/"><u>Virginia Commonwealth University</u></a>, 
+                Richmond VA, United States, advised by <a href="https://egr.vcu.edu/directory/nan.xi/"><u>Prof. Nan Xi</u></a>.
+                Prior to that, I obtained the B.E. from Shanghai University of Finance and Economics</a>. During the undergraduate study, I was fortunate to be advised by 
+                <a href="https://engineering.buffalo.edu/computer-science-engineering/people/faculty-directory/full-time.host.html/content/shared/engineering/computer-science-engineering/profiles/faculty/ladder/doermann-david.detail.html"><u>Prof. David Doermann</u></a>
+                and <a href="https://gong-xuan.github.io/"><u>Dr. Xuan Gong</u></a> at the State University of New York at Buffalo (UB), and <a href="https://faculty-directory.dartmouth.edu/soroush-vosoughi"><u>Prof. Soroush Vosoughi</u></a> at Dartmouth College.
+              </p>
+              <p>My research interests lies in the area of Generative Modeling and Multimodel Reasoning, as well as their applications in the biomedical domain, w.r.t. the reliability, interpretability, and generalization ability.</p>
+            </p>
+            <!-- <p>
+                <span style="color: red;"> I'll </span>
+            </p> -->
+              <p align=center>
+                <a href="mailto:kevinliuleo@gmail.com"> Email </a> /
+                <a href="https://scholar.google.com/citations?hl=en&user=9Y1aQ0oAAAAJ"> Google Scholar </a> /
+                <a href="https://github.com/Chrisleowoo"> Github </a>
+              </p>
+            </td>
+            <td width=25%>
+            <div  style="display: flex; flex-direction: column; align-items: center;">
+              <img src="images/profile.png" width="225">
+              <div>
+              </td>
+          </tr>
+        </table>
+
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+          <tr>
+            <td>
+              <heading>Education</heading>
+            </td>
+          </tr>
+        </table>
+
+        <table width="100%" align="center" border="0" cellpadding="10">
+          <tr>
+            <td width="25%" align="center">
+              <img src="images/LOGO-VCU.png" alt="VCU" width="105" height="105">
+            </td>
+            <td width="75%" valign="top">
+              <p>
+                <strong>Aug. 2026 -   </strong>, Department of Computer Science,
+                <i>
+                  <b>Virginia Commonwealeth University</b>
+                </i></p>
+              <p>PhD Student</br>
+              </p>
+            </td>
+          </tr>
+        </table>
+
+        <table width="100%" align="center" border="0" cellpadding="10">
+          <tr>
+            <td width="25%" align="center">
+              <img src="images/LOGO-SHUFE.png" alt="SHUFE" width="105" height="105">
+            </td>
+            <td width="75%" valign="top">
+              <p>
+                <strong>Sep. 2021 - Jun. 2025 </strong>, School of Computing And Artificial Intelligence,
+                <i>
+                  <b>Shanghai University of Finance and Economics</b>
+                </i></p>
+              <p>B.E. Computer Science</br>
+              </p>
+            </td>
+          </tr>
+        </table>
+
+	<!-- <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+          <tr>
+            <td width="100%" valign="middle">
+              <heading>Preprint</heading>
+            </td>
+          </tr>
+        </table> -->
+
+
+	<!-- <table width="100%" align="center" border="0" cellspacing="10" cellpadding="10">
+          <tr>
+            <td width="40%" align="center">
+              <img src="projects/imgs/cikm24_medfuse.png" alt="medfuse" width="300">
+            </td>
+            <td width="60%" valign="top">
+              <p>
+                <a href="https://arxiv.org/abs/2407.12309">
+                    <papertitle>MEDFuse: Multimodal EHR Data Fusion with Masked Lab-Test Modeling and Large Language Models</papertitle>
+                </a>
+                <br><br>
+                Thao Minh Nguyen Phan, Cong-Tinh Dao, Chenwei Wu, Jian-Zhe Wang, <strong>Shun Liu</strong>, Jun-En Ding, David Restrepo, Feng Liu, Fang-Ming Hung, Wen-Chih Peng
+                <br>
+                <a href="https://femhai.vercel.app/medfuse.html">[Project Page]</a>
+                <a href="https://arxiv.org/abs/2412.09618">[Paper]</a>
+                <a href="https://github.com/TempleX98/EasyRef">[Code]</a>
+                <p>
+                  We propose MEDFuse, a multimodal EHR fusion framework integrating masked lab-test modeling and fine-tuned
+                  LLMs to unify structured lab results and unstructured clinical notes. Evaluated on MIMIC-III and internal 
+                  FEMH datasets, MEDFuse reaches over 90% F1 score on 10-disease multi-label classification for reliable clinical prediction.
+                </p>
+            </td>
+          </tr>
+        </table> -->
+
+	<table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+          <tr>
+            <td width="100%" valign="middle">
+              <heading>Publications</heading>
+            </td>
+          </tr>
+        </table>
+
+	<table width="100%" align="center" border="0" cellspacing="10" cellpadding="10">
+          <tr>
+            <td width="30%" align="center">
+              <img src="projects/imgs/cikm24_medfuse.png" alt="medfuse" width="300">
+            </td>
+            <td width="70%" valign="top">
+              <p>
+                <a href="https://arxiv.org/abs/2407.12309">
+                    <papertitle>MEDFuse: Multimodal EHR Data Fusion with Masked Lab-Test Modeling and Large Language Models</papertitle>
+                </a>
+                <br><br>
+                Thao Minh Nguyen Phan, Cong-Tinh Dao, Chenwei Wu, Jian-Zhe Wang, <strong>Shun Liu</strong>, Jun-En Ding, David Restrepo, Feng Liu, Fang-Ming Hung, Wen-Chih Peng
+                <br>
+                <em><strong>CIKM</strong></em>, 2024, 
+                <!-- <strong><font color="#FF0000">(Spotlight)</font></strong> -->
+                <a href="https://femhai.vercel.app/medfuse.html/">[Project Page]</a>
+                <a href="https://arxiv.org/abs/2407.12309">[Paper]</a>
+                <a href="https://github.com/deepcs233/Visual-CoT">[Code]</a>
+                <p>
+                  We propose MEDFuse, a multimodal EHR fusion framework integrating masked lab-test modeling and fine-tuned
+                  LLMs to unify structured lab results and unstructured clinical notes. Evaluated on MIMIC-III and internal 
+                  FEMH datasets, MEDFuse reaches over 90% F1 score on 10-disease multi-label classification for reliable clinical prediction.
+                </p>
+            </td>
+          </tr>
+        </table>
+
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+          <tr>
+            <td>
+              <heading>Industry Experience</heading>
+            </td>
+          </tr>
+        </table>
+
+        <table width="100%" align="center" border="0" cellpadding="10">
+          <tr>
+            <td width="25%" align="center">
+              <img src="images/LOGO-ExcitAI.png" alt="ExcitAI" width="220" height="95">
+            </td>
+            <td width="75%" valign="top">
+              <p>
+                <strong>Dec. 2024 - Apr. 2026</strong>,
+                <i>
+                  <b>ExcitAI</b>
+                </i></p>
+                Research Intern & Researcher.  <i>Shanghai, China</i>
+                <p><b>Topics</b>: 3DGS For Scene Reconstruction</p>
+              </p>
+            </td>
+          </tr>
+        </table>
+
+        <table width="100%" align="center" border="0" cellpadding="10">
+          <tr>
+            <td width="25%" align="center">
+              <img src="images/LOGO-ShanshuAI.png" alt="Cardinal Operations" width="220" height="95">
+            </td>
+            <td width="75%" valign="top">
+              <p>
+                <strong>Mar. 2024 - Jun. 2024</strong>,
+                <i>
+                  <b>Cardinal Operations</b>
+                </i></p>
+                Research Intern.  <i>Shanghai, China</i>
+                <p><b>Topics</b>: Agents for High-Dimension Feature Engineering</p>
+              </p>
+            </td>
+          </tr>
+        </table>
+
+        <table width="100%" align="center" border="0" cellpadding="10">
+          <tr>
+            <td width="25%" align="center">
+              <img src="images/LOGO-UB.png" alt="University at Buffalo" width="220" height="95">
+            </td>
+            <td width="75%" valign="top">
+              <p>
+                <strong>Mar. 2024 - Dec. 2024</strong>,
+                <i>
+                  <b>University at Buffalo</b>
+                </i></p>
+                Research Assistant.  <i>New York, United States</i>
+                <p><b>Topics</b>: Biomedical Vision Foundation Models</p>
+              </p>
+            </td>
+          </tr>
+        </table>
+
+        <table width="100%" align="center" border="0" cellpadding="10">
+          <tr>
+            <td width="25%" align="center">
+              <img src="images/LOGO-DARTMOUTH.png" alt="Dartmouth College" width="220" height="95">
+            </td>
+            <td width="75%" valign="top">
+              <p>
+                <strong>Oct. 2023 - Jan. 2024</strong>,
+                <i>
+                  <b>Dartmouth College</b>
+                </i></p>
+                Research Assistant.  <i>New Hampshire, United States</i>
+                <p><b>Topics</b>: LLM Reliability, Fairness</p>
+              </p>
+            </td>
+          </tr>
+        </table>
+
+        <!-- Honors and Awards ======================================== -->
+        <!-- <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+          <tr>
+            <td>
+              <heading>Honors and Awards</heading>
+            </td>
+          </tr>
+        </table>
+        <ul>
+          <li>
+            <p class="small">Research Assistantship, 2023 ~ now</p>
+          </li>
+        </ul>
+        <br /> -->
+
+	    <!-- <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+          <tr>
+            <td width="100%" valign="middle">
+              <heading>Service</heading>
+            </td>
+          </tr>
+        </table>
+        <ul>
+          <li>
+            <p class="small-font">Conference Reviewer: </p>
+          </li>
+          <li>
+            <p class="small-font">Teaching Assistant: </p>
+          </li>
+        </ul>
+        <br /> -->
+
+        <!-- Footer ================================================== -->
+        <hr>
+
+        <footer class="footer">
+          <div class="container">
+            <p>
+              &nbsp;&nbsp;&nbsp;Updated Jul. 2025</p>
+            </p>
+            <p align=right>
+              <a href="https://ai.stanford.edu/~kaidicao/"> Template Credit </a>
+              <a class="pull-right" href="#">
+                  <script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=500&t=tt&d=VkYT7USR1EDQkDTDlP7q_8FwHSe_Y6-QtMU3WeV4Wgc&co=2d78ad&cmo=3acc3a&cmn=ff5353&ct=ffffff"></script>
+              </a>
+            </p>
+          </div>
+        </footer>
+
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-SCMVBJM8DX"></script>
+		<script>
+		  window.dataLayer = window.dataLayer| [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'G-SCMVBJM8DX');
+		</script>
+
       </td>
     </tr>
+  </table>
+</body>
 
-  </body>
 </html>
