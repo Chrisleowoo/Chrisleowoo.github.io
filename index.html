@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -300,6 +300,18 @@
       .news-content::before { background: black; }
     }
   </style>
+  <script>
+    (function() {
+      const saved = localStorage.getItem('theme');
+      if (saved) {
+        document.documentElement.setAttribute('data-theme', saved);
+      } else {
+        // 如果没有手动设置过，跟随操作系统的偏好
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
+      }
+    })();
+  </script>
 </head>
 
 <body>
@@ -498,12 +510,6 @@
       html.setAttribute('data-theme', next);
       localStorage.setItem('theme', next);
     }
-
-    // Init Theme
-    document.addEventListener('DOMContentLoaded', () => {
-      const saved = localStorage.getItem('theme') || 'dark';
-      document.documentElement.setAttribute('data-theme', saved);
-    });
 
     // Analytics
     window.dataLayer = window.dataLayer || [];
