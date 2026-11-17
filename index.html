@@ -8,13 +8,13 @@
   <meta name="author" content="Shun Liu">
   
   <!-- Open Graph & Twitter Cards -->
-  <meta property="og:title" content="Shun Liu - CS Ph.D. Student at VCU">
+  <meta property="og:title" content="Shun Liu's Homepage">
   <meta property="og:description" content="Research in Multimodal Learning and Visual Reasoning for clinical practices.">
   <meta property="og:image" content="images/profile.png">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   
-  <title>Shun Liu - CS Ph.D. Student at VCU</title>
+  <title>Shun Liu's Homepage</title>
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,7 +39,6 @@
       "https://github.com/Chrisleowoo"
     ]
   }
-  
   </script>
 
   <style>
@@ -69,7 +68,7 @@
     }
 
     /* ===== Reset & Base ===== */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     body {
       font-family: var(--font-sans);
@@ -91,9 +90,9 @@
       display: flex;
       gap: 40px;
       align-items: flex-start;
-      margin-bottom: 48px;
-      border-bottom: 2px solid var(--border-color);
+      margin-bottom: 35px;
       padding-bottom: 32px;
+      border-bottom: 1px solid var(--border-color);
       transition: border-color 0.3s ease;
     }
     .header-text { flex: 1; }
@@ -101,6 +100,23 @@
     .header .subtitle { font-size: 18px; color: var(--text-muted); margin-bottom: 16px; font-weight: 500; }
     .header .email { font-family: monospace; background: var(--bg-section); padding: 4px 8px; border-radius: 4px; font-size: 14px; border: 1px solid var(--border-color); display: inline-block; margin-bottom: 16px;}
     .header p { margin-bottom: 12px; color: var(--text-muted); text-align: justify; }
+
+    /* Research Interest Badges */
+    .research-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 14px 0 18px 0;
+    }
+    .research-tag {
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--primary-light);
+      color: var(--primary);
+      border: 1px solid var(--border-color);
+    }
     
     .profile-img {
       width: 180px;
@@ -119,8 +135,8 @@
 
     .social-links {
       display: flex;
-      gap: 18px;
-      margin-top: 22px;
+      gap: 14px;
+      margin-top: 18px;
       flex-wrap: wrap;
     }
 
@@ -145,7 +161,6 @@
       box-shadow: 0 8px 18px rgba(0, 86, 179, 0.3);
       text-decoration: none;
     }
-
 
     /* ===== Sections ===== */
     .section { margin-bottom: 40px; }
@@ -180,7 +195,6 @@
     .section-title:hover::after {
       transform: scaleX(1);
     }
-
     
     .toggle-btn {
       font-size: 12px;
@@ -198,7 +212,7 @@
     .news-item {
       display: flex;
       gap: 24px;
-      margin-bottom: 1px;
+      margin-bottom: 4px;
       align-items: baseline;
       padding: 10px 1px;
       border-radius: 12px;
@@ -250,7 +264,6 @@
       background-color: var(--primary);
     }
 
-
     /* ===== Publications ===== */
     .pub-item {
       display: flex;
@@ -263,7 +276,7 @@
       background-color: transparent;
       transition: background-color 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
     }
-    /* ===== Publications ===== */
+
     .pub-item:hover {
       background-color: var(--primary-light);
       border-color: var(--border-color);
@@ -286,19 +299,9 @@
       border-color: var(--primary);
     }
 
-    .pub-title {
-      font-size: 17px;
-      font-weight: 600;
-      margin-bottom: 8px;
-      line-height: 1.4;
-      transition: color 0.25s ease;
-    }
-
-    .pub-title a {
-      position: relative;
-      text-decoration: none;
-    }
-
+    .pub-info { flex: 1; }
+    .pub-title { font-size: 17px; font-weight: 600; margin-bottom: 8px; line-height: 1.4; }
+    .pub-title a { position: relative; text-decoration: none; }
     .pub-title a::after {
       content: "";
       position: absolute;
@@ -309,13 +312,8 @@
       background-color: var(--primary);
       transition: width 0.3s ease;
     }
+    .pub-title a:hover::after { width: 100%; }
 
-    .pub-title a:hover::after {
-      width: 100%;
-    }
-
-    .pub-info { flex: 1; }
-    .pub-title { font-size: 17px; font-weight: 600; margin-bottom: 8px; line-height: 1.4; }
     .pub-authors { font-size: 14px; color: var(--text-muted); margin-bottom: 6px; }
     .pub-authors strong { color: var(--primary); font-weight: 700; }
     .pub-venue { font-size: 14px; font-weight: 600; font-style: italic; color: var(--text-main); margin-bottom: 12px; }
@@ -344,6 +342,21 @@
     }
 
     .pub-abstract { font-size: 14px; color: var(--text-light); line-height: 1.5; text-align: justify; }
+
+    /* Bibtex Box Modal / Toggle */
+    .bibtex-box {
+      display: none;
+      margin-top: 12px;
+      padding: 12px;
+      background: var(--bg-section);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      font-family: monospace;
+      font-size: 12px;
+      color: var(--text-main);
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
 
     /* ===== Experiences ===== */
     .exp-item {
@@ -417,7 +430,6 @@
       transform: scale(1.2) rotate(-6deg);
     }
 
-    .honor-icon { font-size: 18px; }
     .honor-text { flex: 1; color: var(--text-muted); }
     .honor-text strong { color: var(--text-main); }
 
@@ -457,12 +469,12 @@
       .exp-header { justify-content: center; }
     }
 
-    /* ===== Print / PDF Export Optimization (Crucial for Academic CV) ===== */
+    /* ===== Print / PDF Export Optimization ===== */
     @media print {
       @page { margin: 1.5cm; }
       body { font-size: 11pt; background: white !important; color: black !important; }
       .container { max-width: 100%; padding: 0; }
-      .theme-toggle, .toggle-btn, .skip-link, .social-links svg { display: none !important; }
+      .theme-toggle, .toggle-btn, .skip-link, .social-links svg, .bibtex-box { display: none !important; }
       
       .header { border-bottom: 2px solid #000; padding-bottom: 16px; margin-bottom: 24px; }
       .header h1 { font-size: 24pt; }
@@ -470,29 +482,25 @@
       
       .section-title { font-size: 14pt; border-bottom: 1px solid #000; margin-bottom: 12px; }
       
-      /* Prevent awkward page breaks */
       .pub-item, .exp-item, .news-item, .honor-item { 
         break-inside: avoid; 
         page-break-inside: avoid; 
       }
       
       .pub-img, .exp-logo { box-shadow: none; border: 1px solid #ccc; }
-      
       a { color: black !important; text-decoration: none; }
       .pub-title a { text-decoration: underline; }
-      
       .badge { border: 1px solid #000; background: white !important; color: black !important; }
       .news-content::before { background: black; }
     }
-
   </style>
+  
   <script>
     (function() {
       const saved = localStorage.getItem('theme');
       if (saved) {
         document.documentElement.setAttribute('data-theme', saved);
       } else {
-        // 如果没有手动设置过，跟随操作系统的偏好
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
       }
@@ -509,9 +517,16 @@
         <div class="subtitle">Ph.D. Student</div>
         <div class="email">📧 kevinliuleo [AT] gmail [DOT] com</div>
         
+        <!-- Research Badges for instant scanning -->
+        <div class="research-tags">
+          <span class="research-tag"># Multimodal Learning</span>
+          <span class="research-tag"># Medical AI</span>
+          <span class="research-tag"># Cybersecurity</span>
+        </div>
+
         <p>
-          I'm a CS Ph.D. student at <a href="https://www.vcu.edu/" target="_blank" rel="noopener">Virginia Commonwealth University</a>, co-advised by <a href="https://hszhou3.github.io/" target="_blank" rel="noopener">Prof. Hongsheng Zhou</a> and <a href="https://southnx.github.io/" target="_blank" rel="noopener">Prof. Nan Xi</a>.
-          Prior to that, I obtained the B.E. in CS from <a href="https://www.shufe.edu.cn/" target="_blank" rel="noopener">SHUFE</a>. During my undergraduate study, I had the great opportunity to work with 
+          I'm a first-year CS Ph.D. student at <a href="https://www.vcu.edu/" target="_blank" rel="noopener">Virginia Commonwealth University</a>, co-advised by <a href="https://hszhou3.github.io/" target="_blank" rel="noopener">Prof. Hong-Sheng Zhou</a> and <a href="https://southnx.github.io/" target="_blank" rel="noopener">Prof. Nan Xi</a>.
+          Prior to that, I obtained the B.E. in Computer Science from <a href="https://english.sufe.edu.cn" target="_blank" rel="noopener">SHUFE</a>. During my undergraduate study, I had the great opportunity to work with 
           <a href="https://cse.buffalo.edu/~doermann/" target="_blank" rel="noopener">Prof. David Doermann</a> 
           and <a href="https://gong-xuan.github.io/" target="_blank" rel="noopener">Dr. Xuan Gong</a> at SUNY-Buffalo, as well as <a href="https://faculty-directory.dartmouth.edu/soroush-vosoughi" target="_blank" rel="noopener">Prof. Soroush Vosoughi</a> at Dartmouth College.
         </p>
@@ -536,8 +551,12 @@
         </h2>
         <ul class="news-list" id="news-list">
           <li class="news-item">
+            <span class="news-date">Nov. 2026</span>
+            <span class="news-content">📝 One paper working on Medical Image Analysis submitted to CVPR'27!</span>
+          </li>
+          <li class="news-item">
             <span class="news-date">Sep. 2026</span>
-            <span class="news-content">📝 One paper working on Privacy-Preserving Visual Generation submitted to ICLR'27</a>!</span>
+            <span class="news-content">📝 One paper working on Privacy-Preserving Visual Generation submitted to ICLR'27!</span>
           </li>
           <li class="news-item">
             <span class="news-date">Sep. 2026</span>
@@ -545,7 +564,7 @@
           </li>
           <li class="news-item">
             <span class="news-date">Jul. 2026</span>
-            <span class="news-content">📝 One paper working on Interpretable Vision-Language Reasoning submitted to AAAI'27</a>!</span>
+            <span class="news-content">📝 One paper working on Interpretable Vision-Language Reasoning submitted to AAAI'27!</span>
           </li>
           <li class="news-item">
             <span class="news-date">Apr. 2026</span>
@@ -559,11 +578,6 @@
             <span class="news-date">Nov. 2024</span>
             <span class="news-content">📝 One paper accepted at <strong>CIKM 2024</strong>!</span>
           </li>
-        
-          <!-- <li class="news-item">
-            <span class="news-date">Mar. 2026</span>
-            <span class="news-content">🛡️ Serving as a Reviewer for <strong>Conference</strong>.</span>
-          </li> -->
         </ul>
       </section>
 
@@ -584,11 +598,18 @@
               <div class="pub-venue">arXiv, 2026</div>
               <div class="pub-links">
                   <a href="https://arxiv.org/abs/2607.08397" class="badge" target="_blank" rel="noopener">📄 Paper</a>
-                  <a href="#" class="badge" target="_blank" rel="noopener">💻 Code (coming soon)</a>
+                  <a href="#" class="badge" target="_blank" rel="noopener">💻 Code</a>
+                  <button class="badge" onclick="toggleBibtex('bibtex-refer')">💬 BibTeX</button>
               </div>
               <p class="pub-abstract">
                   We introduce ReferEndoscopy, the first large-scale instruction-based endoscopic RIS benchmark, and propose the AR-ERIS framework for open-vocabulary compositional referring segmentation, w.r.t. the frequency properties of scene objects. Our method achieves state-of-the-art performance on both simulated and real-world endoscopic data.
               </p>
+              <div id="bibtex-refer" class="bibtex-box">@article{liu2026attributeretrieving,
+  title={Attribute Retrieving for Open-Vocabulary Endoscopic Compositional Referring Segmentation},
+  author={Liu, Shun and Xi, Nan and Liu, Yang and Luan, Tianyu and Gong, Xuan and Doermann, David},
+  journal={arXiv preprint arXiv:2607.08397},
+  year={2026}
+}</div>
           </div>
         </div>
         
@@ -607,14 +628,19 @@
               <a href="https://femhai.vercel.app/medfuse.html/" class="badge" target="_blank" rel="noopener">🌐 Project Page</a>
               <a href="https://arxiv.org/abs/2407.12309" class="badge" target="_blank" rel="noopener">📄 Paper</a>
               <a href="#" class="badge" target="_blank" rel="noopener">💻 Code</a>
+              <button class="badge" onclick="toggleBibtex('bibtex-medfuse')">💬 BibTeX</button>
             </div>
             <p class="pub-abstract">
               We propose MEDFuse, a multimodal EHR fusion framework integrating masked lab-test modeling and fine-tuned LLMs to unify structured lab results and unstructured clinical notes. Evaluated on MIMIC-III and internal FEMH datasets, MEDFuse reaches over 90% F1 score on 10-disease multi-label classification for reliable clinical prediction.
             </p>
+            <div id="bibtex-medfuse" class="bibtex-box">@inproceedings{phan2024medfuse,
+  title={MEDFuse: Multimodal EHR Data Fusion with Masked Lab-Test Modeling and Large Language Models},
+  author={Phan, Thao Minh Nguyen and Dao, Cong-Tinh and Wu, Chenwei and Wang, Jian-Zhe and Liu, Shun and Ding, Jun-En and Restrepo, David and Liu, Feng and Hung, Fang-Ming and Peng, Wen-Chih},
+  booktitle={Proceedings of the 33rd ACM International Conference on Information and Knowledge Management},
+  year={2024}
+}</div>
           </div>
-      </div>
-      
-
+        </div>
       </section>
 
       <!-- Experiences -->
@@ -678,17 +704,13 @@
             <span class="honor-icon">🏆</span>
             <span class="honor-text"><strong>Graduate Research Assistantship</strong>, Virginia Commonwealth University (Aug. 2026 - Present)</span>
           </li>
-          <!-- <li class="honor-item">
-            <span class="honor-icon">🎖️</span>
-            <span class="honor-text"><strong>Outstanding Graduate Award</strong>, SHUFE (Jun. 2024)</span>
-          </li> -->
         </ul>
       </section>
     </main>
 
     <!-- Footer -->
     <footer class="footer">
-      <p>© 2026 Shun Liu &nbsp;|&nbsp; Updated Aug. 2026 &nbsp;</p>
+      <p>© 2026 Shun Liu &nbsp;|&nbsp; Updated Nov. 2026 &nbsp;</p>
       <p style="margin-top: 8px;">
         <button class="theme-toggle" onclick="toggleTheme()">Toggle Dark Mode</button>
       </p>
@@ -711,6 +733,16 @@
       } else {
         el.style.display = 'none';
         btn.textContent = '[Expand]';
+      }
+    }
+
+    // Toggle Bibtex Citation Box
+    function toggleBibtex(id) {
+      const el = document.getElementById(id);
+      if (el.style.display === 'block') {
+        el.style.display = 'none';
+      } else {
+        el.style.display = 'block';
       }
     }
 
